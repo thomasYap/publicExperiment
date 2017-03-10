@@ -1,10 +1,7 @@
-var http = require('http');
+var fs = require("fs");
 
-http.createServer( function (request, response) {
-  response.writeHeader(200, {'Content-Type': 'text/plain'});
+var data = fs.readFileSync('input.txt');
 
-  response.end('hey you!');
+console.log(data.toString());
 
-}).listen(8081);
-
-console.log('Server running at http://127.0.0.1:8081/');
+console.log('End of Story');
